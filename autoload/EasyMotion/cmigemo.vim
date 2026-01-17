@@ -32,28 +32,38 @@ let s:Boshiamy_table = {
         \ '.': '彡',
         \ '.m': '彡',
         \ 'a': '丶主义之也乶乸亼今令会佘余佱侌侖侴俞倉僉兪兮冰凣刌划刢剆剗剣創劃劊劍劎劔勆卽叙合含命咸喸塱墍壟壹奧威寸尃對尤尨弇弋弌弍弎式彧忒念怷怸惑愈感慦慼憌懖懟懯戈戉戊戌戍戎成戒戓戔或戚戜戧拿搻敆敍救敘敜敷斂斜旉族旣曁曵書會朇朗朮术槩樖欦欱欴欸欽歈歙歛殶毹氷求淾澳烕犬犮猋瓴甙甫畣畲發皐皳盋盒盙盚盛盞盦盫矣礱缽義翎翕翖翶聾臧臯良華虦蠪術衾裘襲覦觱讋貣貪貳貸蹙迆过迖迬述逋逑途逘逾過郃郎郒郕郙郞鄃鄰鄶酓金釒釓釔釕釖釗釘釙釚釛針釞釟釠釢釣釤釥釦釧釨釩釪釫釬釭釮釯釰釱釲釳釴釵釶釷釸釹釺釻釽釾釿鈀鈁鈂鈃鈄鈅鈆鈇鈈鈉鈊鈋鈌鈍鈎鈏鈐鈑鈒鈓鈔鈕鈖鈗鈘鈙鈚鈛鈜鈝鈞鈟鈠鈡鈢鈣鈤鈥鈦鈧鈨鈪鈫鈮鈯鈰鈱鈲鈳鈴鈵鈶鈷鈸鈹鈺鈻鈼鈽鈾鈿鉀鉁鉂鉃鉄鉅鉆鉇鉈鉉鉊鉋鉌鉍鉎鉏鉐鉑鉒鉓鉔鉕鉖鉗鉘鉙鉚鉛鉜鉝鉞鉟鉠鉡鉢鉣鉤鉥鉦鉧鉨鉩鉪鉫鉬鉭鉮鉯鉰鉲鉳鉵鉶鉸鉹鉺鉻鉼鉽鉾鉿銀銁銂銃銄銅銆銇銈銉銊銋銌銍銏銑銒銓銔銕銖銗銘銙銚銛銜銝銟銠銡銢銣銤銥銦銧銨銩銪銫銬銭銯銰銱銲銳銵銶銷銸銹銻銼銽銾銿鋀鋁鋂鋃鋄鋅鋇鋉鋊鋋鋌鋍鋎鋏鋐鋑鋒鋓鋔鋕鋖鋗鋘鋙鋛鋜鋝鋞鋟鋠鋡鋢鋣鋤鋥鋦鋧鋨鋩鋪鋭鋮鋯鋰鋱鋳鋴鋵鋶鋷鋸鋹鋺鋼鋽鋾鋿錀錁錂錄錆錇錈錉錊錋錌錍錎錏錐錑錒錓錔錕錗錘錙錚錛錜錝錞錟錠錡錢錣錤錥錦錧錨錩錪錫錬錭錮錯錰錱録錳錴錵錶錷錸錹錼錽錿鍀鍁鍂鍃鍅鍆鍇鍈鍉鍊鍋鍍鍎鍏鍐鍑鍒鍓鍔鍕鍖鍗鍘鍚鍛鍜鍝鍞鍟鍠鍡鍢鍣鍤鍥鍦鍧鍨鍩鍬鍭鍮鍯鍰鍱鍲鍴鍵鍶鍷鍸鍹鍺鍻鍼鍽鍾鍿鎀鎁鎂鎃鎄鎅鎆鎇鎈鎉鎊鎋鎌鎍鎎鎐鎑鎒鎓鎔鎕鎖鎗鎘鎙鎚鎛鎝鎞鎟鎠鎡鎢鎤鎦鎧鎨鎩鎪鎫鎬鎭鎮鎯鎰鎱鎲鎳鎴鎵鎶鎷鎸鎺鎻鎼鎽鎾鎿鏀鏁鏂鏃鏄鏅鏆鏇鏈鏉鏋鏌鏍鏎鏏鏐鏑鏒鏓鏔鏕鏗鏘鏙鏚鏛鏜鏝鏞鏟鏠鏡鏢鏣鏤鏥鏦鏩鏪鏫鏬鏭鏮鏯鏰鏱鏲鏳鏴鏵鏶鏷鏸鏹鏺鏻鏼鏽鏾鏿鐀鐁鐂鐃鐄鐇鐈鐉鐊鐋鐌鐍鐎鐏鐐鐑鐒鐓鐔鐕鐖鐗鐘鐙鐚鐛鐝鐞鐟鐠鐣鐤鐥鐦鐧鐨鐩鐪鐫鐬鐭鐮鐯鐰鐱鐲鐳鐴鐵鐶鐷鐸鐹鐺鐻鐼鐽鐿鑀鑂鑃鑄鑅鑆鑇鑈鑉鑊鑌鑎鑏鑐鑑鑔鑕鑖鑗鑘鑙鑚鑛鑜鑝鑞鑟鑠鑡鑢鑣鑤鑥鑦鑧鑨鑩鑪鑫鑬鑭鑮鑯鑰鑱鑲鑳鑴鑵鑶鑷鑸鑹鑺鑻鑼鑽钀钁钂钃钄锺隿雂韽領頜頷顉顑顣顩飆餘駐驡髮鳶鳹鴒鴿鵏鵭鶐鶬鷨鸗鸙點龍龏龑龒龔龕龖龘龠龡龢龣龤龥'
-\ }
+}
 
 function! EasyMotion#cmigemo#getMigemoPattern(input)
+    echom "--- My custom cmigemo function was called with input: " . a:input
+
     let l:input_len = strlen(a:input)
     if l:input_len == 1
-        " Wait for the second character.
+        " Return a pattern that is extremely unlikely to match anything in the text,
+        " effectively making EasyMotion wait for the next character.
         return "\ue000"
     elseif l:input_len != 2
+        " For inputs longer than 2 chars, or other unexpected lengths,
+        " just return the input for a literal search.
         return a:input
     endif
 
     let l:chinese_chars = get(s:Boshiamy_table, a:input, '')
 
-    if l:chinese_chars == ''
-        " No match found in the dictionary, do not search for anything.
-        return "\ue000"
-    else
-        " Chinese characters found.
-        " Create a pattern like '名\|壁\|...'
+    " Use 'very magic' mode for a cleaner regex
+    let l:pattern = '\v'
+
+    " Add the literal input part, e.g., ('er')
+    let l:pattern .= '(' . escape(a:input, '\') . ')'
+
+    if l:chinese_chars != ''
+        " Add the Chinese characters part
         let l:char_list = split(l:chinese_chars, '\zs')
-        " Escape each character for safety, although with single CJK chars it's rarely needed.
-        let l:escaped_list = map(l:char_list, 'escape(v:val, ".*[]^%~")')
-        return join(l:escaped_list, '\|')
+        " Escape each character just in case
+        let l:escaped_list = map(l:char_list, 'escape(v:val, ''\.*[]^%~'')')
+        let l:pattern .= '|(' . join(l:escaped_list, '|') . ')'
     endif
+
+    echom "--- Generated pattern: " . l:pattern
+    return l:pattern
 endfunction
