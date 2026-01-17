@@ -1,10 +1,6 @@
 scriptencoding utf-8
 
 " Boshiamy (嘸蝦米) two-character prefix lookup table
-" Groups all characters by their first two code letters
-" This is much more efficient than storing all individual codes
-" Total entries: 735 (vs 22,778 in unoptimized version)
-" Memory saving: ~96% reduction
 let s:Boshiamy_table = {
         \ '''''': '“”〝〞＂',
         \ ',''': '‘’“”′‵、〝〞丶＂＇，',
@@ -745,26 +741,21 @@ let s:Boshiamy_table = {
 
 function! EasyMotion#cmigemo#getMigemoPattern(input)
     let l:input_len = strlen(a:input)
-
-    " Only support 2-character input for s2/f2 commands
     if l:input_len != 2
         return a:input
     endif
 
-    " Look up the two-character prefix directly
-    " This matches ALL characters whose code starts with the input
-    " Example: input 'ao' matches all codes like 'ao', 'aoa', 'aob', 'aoc', etc.
     let l:pattern = get(s:Boshiamy_table, a:input, '')
-
     if l:pattern == ''
-        " No matches found, return input as-is
         return a:input
     endif
 
-    " Create regex: matches input string OR any character from pattern
-    " Format: [first_char][second_char]\|[chinese_chars]
-    " Example: ao\|[哈嘿嚇]
-    let first = a:input[0]
-    let second = a:input[1]
-    return '[' . first . '][' . second . ']\|[' . l:pattern . ']'
+    " Escape special regex chars: ] \ ^ -
+    let l:escaped = substitute(l:pattern, '\\', '\\\\', 'g')
+    let l:escaped = substitute(l:escaped, '\]', '\\]', 'g')
+    let l:escaped = substitute(l:escaped, '\^', '\\^', 'g')
+    let l:escaped = substitute(l:escaped, '-', '\\-', 'g')
+
+    " Return pattern: [first][second]\|[chars]
+    return '[' . a:input[0] . '][' . a:input[1] . ']\|[' . l:escaped . ']'
 endfunction
