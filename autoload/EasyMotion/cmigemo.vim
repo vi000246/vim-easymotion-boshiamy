@@ -37,26 +37,23 @@ let s:Boshiamy_table = {
 function! EasyMotion#cmigemo#getMigemoPattern(input)
     let l:input_len = strlen(a:input)
     if l:input_len == 1
-        " Return a pattern that is extremely unlikely to match anything in the text,
-        " effectively making EasyMotion wait for the next character.
+        " Wait for the second character.
         return "\ue000"
     elseif l:input_len != 2
-        " For inputs longer than 2 chars, or other unexpected lengths,
-        " just return the input for a literal search.
         return a:input
     endif
 
     let l:chinese_chars = get(s:Boshiamy_table, a:input, '')
 
     if l:chinese_chars == ''
-        " No Chinese characters match this prefix.
-        " Return a non-matching pattern to prevent jumping to literal English for now.
+        " No match found in the dictionary, do not search for anything.
         return "\ue000"
     else
         " Chinese characters found.
-        " Escape any special regex characters in the Chinese string.
-        let l:escaped_chinese = substitute(l:chinese_chars, '[\\^\[\]-]', '\\\0', 'g')
-        " Create a pattern to match ONLY the Chinese characters for debugging.
-        return '[' . l:escaped_chinese . ']'
+        " Create a pattern like '名\|壁\|...'
+        let l:char_list = split(l:chinese_chars, '\zs')
+        " Escape each character for safety, although with single CJK chars it's rarely needed.
+        let l:escaped_list = map(l:char_list, 'escape(v:val, ".*[]^%~")')
+        return join(l:escaped_list, '\|')
     endif
 endfunction
