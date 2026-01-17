@@ -741,7 +741,11 @@ let s:Boshiamy_table = {
 
 function! EasyMotion#cmigemo#getMigemoPattern(input)
     let l:input_len = strlen(a:input)
-    if l:input_len != 2
+    if l:input_len == 1
+        " Return a pattern that is extremely unlikely to match anything in the text,
+        " effectively making EasyMotion wait for the next character.
+        return "\ue000"
+    elseif l:input_len != 2
         return a:input
     endif
 
