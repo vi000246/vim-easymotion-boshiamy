@@ -762,8 +762,9 @@ function! EasyMotion#cmigemo#getMigemoPattern(input)
     endif
 
     " Create regex: matches input string OR any character from pattern
-    " Template: \%%(%s\|[%s])
-    " Example: \%%(ao\|[哈嘿嚇])
-    let template = '\%%(%s\|[%s])'
-    return printf(template, a:input, l:pattern)
+    " Format: [first_char][second_char]\|[chinese_chars]
+    " Example: ao\|[哈嘿嚇]
+    let first = a:input[0]
+    let second = a:input[1]
+    return '[' . first . '][' . second . ']\|[' . l:pattern . ']'
 endfunction
