@@ -48,20 +48,15 @@ function! EasyMotion#cmigemo#getMigemoPattern(input)
 
     let l:chinese_chars = get(s:Boshiamy_table, a:input, '')
 
-    " Build a regex pattern to match the literal input, e.g., 'er' becomes '[e][r]'
-    " This handles case-insensitivity from EasyMotion's settings correctly.
-    let l:input_pattern = '[' . escape(a:input[0], '[]') . '][' . escape(a:input[1], '[]') . ']'
-
     if l:chinese_chars == ''
         " No Chinese characters match this prefix.
-        " Just search for the literal English sequence.
-        return l:input_pattern
+        " Return a non-matching pattern to prevent jumping to literal English for now.
+        return "\ue000"
     else
         " Chinese characters found.
         " Escape any special regex characters in the Chinese string.
         let l:escaped_chinese = substitute(l:chinese_chars, '[\\^\[\]-]', '\\\0', 'g')
-        " Create a pattern to match EITHER the literal English sequence OR the Chinese characters.
-        " e.g., for 'as', the pattern will be '[a][s]\|[劍戚斂書...]'
-        return l:input_pattern . '\|[' . l:escaped_chinese . ']'
+        " Create a pattern to match ONLY the Chinese characters for debugging.
+        return '[' . l:escaped_chinese . ']'
     endif
 endfunction
